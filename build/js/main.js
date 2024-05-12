@@ -120,3 +120,66 @@ let stringArray = new CustomArray(["Ram", "Sita"]);
 const stringArrayResult = stringArray.getItem();
 stringArray.addItem(10);
 console.log(stringArrayResult);
+// Rest parameter
+const total = (...nums) => {
+    return nums.reduce((previousValue, currentValue) => previousValue + currentValue);
+};
+const logMessage = (message) => {
+    console.log(message);
+};
+logMessage(total(5, 5, 5, 5));
+const greet = (greeting, ...names) => {
+    return `${greeting}, ${names.join(", ")}`;
+};
+logMessage(greet("Good evening", "Madhav", "Hari", "Sham"));
+/*
+Type never: It is used when value that will never occur
+
+*/
+const infinitFunction = () => {
+    while (true) {
+        console.log("I am infinitFunction...");
+    }
+};
+let a = "helo";
+let b = "helo";
+let code = 123;
+let userNum = code;
+console.log(typeof userNum);
+let student1 = { name: "Madhav", rollNum: 4 };
+console.log(student1.name);
+class Person {
+    name;
+    address;
+    age;
+    constructor(name, address, age) {
+        this.address = address;
+        this.name = name;
+        this.age = age;
+    }
+    getAge() {
+        return this.age;
+    }
+    getPersonInfo() {
+        return `${this.name} lives in ${this.address} and ${this.age} years old`;
+    }
+}
+const myPerson = new Person("Madhav", "Sydeny, Australia", 20);
+console.log(myPerson.getPersonInfo());
+class Programmer extends Person {
+    language;
+    experience;
+    constructor(address, name, age, language, experience) {
+        super(name, address, age);
+        this.language = language;
+        this.experience = experience;
+    }
+    getLanguages() {
+        return `${this.language.join(", ")}`;
+    }
+    getProgrammerInfo() {
+        return `${this.name} lives in ${this.address} and ${this.getAge()} years old has knowledge of ${this.getLanguages()} and has ${this.experience} years of experience. `;
+    }
+}
+const myProgrammer = new Programmer("Sydney, Australia", "Madhav Pandey", 20, ["JavaScript", "PHP"], 2);
+console.log(myProgrammer.getProgrammerInfo());

@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TypeScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
-    <script defer src="./js/main.js"></script>
-    <h1>TypeScript For Begineer</h1>
+ <div class="flex bg-purple-600">
+<button class=" rounded-md p-1 text-white m-2 bg-red-600 font-bold" id="undoBtn">Undo</button>
+<button class=" rounded-md p-1 text-white m-2 bg-blue-600 font-bold" id="redoBtn">Redo</button>
+<button class=" rounded-md p-1 text-white m-2 bg-green-600 font-bold" id="resetBtn">Reset</button>
+
+ </div>
+<hr>
+ <div class="relative bg-purple-600 h-screen text-white hover:
+ cursor-pointer" id="drawing-area">
+
+ </div>
 </body>
 </html>
